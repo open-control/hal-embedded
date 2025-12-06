@@ -1,0 +1,23 @@
+{
+  "name": "open-control-driver-common",
+  "version": "0.1.0",
+  "description": "Common types for Open Control drivers",
+  "keywords": ["open-control", "drivers", "embedded"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/open-control/driver-common.git"
+  },
+  "authors": [
+    {
+      "name": "Open Control",
+      "url": "https://github.com/open-control"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "open-control/framework": "*"
+  },
+  "build": {
+    "includeDir": "src"
+  }
+}
