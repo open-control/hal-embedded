@@ -1,19 +1,13 @@
 #pragma once
 
-#include <cstdint>
+// Re-export types from framework for convenience
+#include <oc/hal/Types.hpp>
 
 namespace oc::common {
 
-using ButtonID = uint16_t;
-using EncoderID = uint16_t;
-
-struct GpioPin {
-    enum class Source : uint8_t {
-        MCU,
-        MUX
-    };
-    uint8_t pin;
-    Source source = Source::MCU;
-};
+// Alias framework types into common namespace
+using oc::hal::ButtonID;
+using oc::hal::EncoderID;
+using oc::hal::GpioPin;
 
 }  // namespace oc::common
