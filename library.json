@@ -1,6 +1,6 @@
 {
   "name": "hal-common",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Common types for Open Control HAL",
   "keywords": ["open-control", "hal", "embedded"],
   "repository": {
@@ -11,7 +11,7 @@
   "frameworks": "*",
   "platforms": "*",
   "dependencies": {
-    "open-control/framework": "^0.1.0"
+    "open-control/framework": "^0.1.1"
   },
   "build": {
     "includeDir": "src",
