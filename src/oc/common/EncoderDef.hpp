@@ -56,52 +56,6 @@ struct EncoderDef {
     uint16_t rangeAngle = 270;      ///< Total rotation angle in degrees
     uint8_t ticksPerEvent = 4;      ///< Ticks per emitted event (detent)
     bool invertDirection = false;   ///< Invert rotation direction
-
-    /// @brief Default constructor
-    constexpr EncoderDef() = default;
-
-    /**
-     * @brief Construct with EncoderID type
-     * @param encoderId Logical encoder identifier
-     * @param pA GPIO pin for channel A
-     * @param pB GPIO pin for channel B
-     * @param pulses Pulses per revolution (default: 24)
-     * @param range Total rotation angle in degrees (default: 270)
-     * @param ticks Ticks per event (default: 4)
-     * @param invert Invert direction (default: false)
-     */
-    constexpr EncoderDef(EncoderID encoderId, uint8_t pA, uint8_t pB,
-                         uint16_t pulses = 24, uint16_t range = 270,
-                         uint8_t ticks = 4, bool invert = false)
-        : id(encoderId), pinA(pA), pinB(pB), ppr(pulses),
-          rangeAngle(range), ticksPerEvent(ticks), invertDirection(invert) {}
-
-    /**
-     * @brief Construct with enum class ID (implicit conversion)
-     *
-     * Allows using custom enum class types without explicit cast:
-     * @code
-     * enum class MyEncoderID : uint16_t { VOL = 1 };
-     * EncoderDef def{MyEncoderID::VOL, 22, 23};
-     * @endcode
-     *
-     * @tparam EnumT Enum class with uint16_t underlying type
-     * @param enumId Enum value to use as encoder ID
-     * @param pA GPIO pin for channel A
-     * @param pB GPIO pin for channel B
-     * @param pulses Pulses per revolution (default: 24)
-     * @param range Total rotation angle in degrees (default: 270)
-     * @param ticks Ticks per event (default: 4)
-     * @param invert Invert direction (default: false)
-     */
-    template <typename EnumT,
-              typename = std::enable_if_t<std::is_enum_v<EnumT> &&
-                                          std::is_same_v<std::underlying_type_t<EnumT>, uint16_t>>>
-    constexpr EncoderDef(EnumT enumId, uint8_t pA, uint8_t pB,
-                         uint16_t pulses = 24, uint16_t range = 270,
-                         uint8_t ticks = 4, bool invert = false)
-        : id(static_cast<EncoderID>(enumId)), pinA(pA), pinB(pB), ppr(pulses),
-          rangeAngle(range), ticksPerEvent(ticks), invertDirection(invert) {}
 };
 
 }  // namespace oc::common
