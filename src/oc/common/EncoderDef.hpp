@@ -56,6 +56,28 @@ struct EncoderDef {
     uint16_t rangeAngle = 270;      ///< Total rotation angle in degrees
     uint8_t ticksPerEvent = 4;      ///< Ticks per emitted event (detent)
     bool invertDirection = false;   ///< Invert rotation direction
+
+    /// Default constructor
+    constexpr EncoderDef() = default;
+
+    /// Constructor with raw uint16_t ID
+    constexpr EncoderDef(EncoderID id_, uint8_t pinA_, uint8_t pinB_,
+                         uint16_t ppr_ = 24, uint16_t rangeAngle_ = 270,
+                         uint8_t ticksPerEvent_ = 4, bool invertDirection_ = false)
+        : id(id_), pinA(pinA_), pinB(pinB_), ppr(ppr_),
+          rangeAngle(rangeAngle_), ticksPerEvent(ticksPerEvent_),
+          invertDirection(invertDirection_) {}
+
+    /// Constructor with enum class ID (enables IDE autocompletion)
+    template <typename EnumT,
+              typename = std::enable_if_t<std::is_enum_v<EnumT> &&
+                                          std::is_same_v<std::underlying_type_t<EnumT>, uint16_t>>>
+    constexpr EncoderDef(EnumT id_, uint8_t pinA_, uint8_t pinB_,
+                         uint16_t ppr_ = 24, uint16_t rangeAngle_ = 270,
+                         uint8_t ticksPerEvent_ = 4, bool invertDirection_ = false)
+        : id(static_cast<EncoderID>(id_)), pinA(pinA_), pinB(pinB_), ppr(ppr_),
+          rangeAngle(rangeAngle_), ticksPerEvent(ticksPerEvent_),
+          invertDirection(invertDirection_) {}
 };
 
 }  // namespace oc::common
