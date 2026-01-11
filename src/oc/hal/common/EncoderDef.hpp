@@ -3,9 +3,9 @@
 #include <cstdint>
 #include <type_traits>
 
-#include <oc/common/Types.hpp>
+#include <oc/hal/common/Types.hpp>
 
-namespace oc::common {
+namespace oc::hal::common {
 
 /**
  * @brief Hardware definition for a rotary encoder
@@ -80,4 +80,4 @@ struct EncoderDef {
           invertDirection(invertDirection_) {}
 };
 
-}  // namespace oc::common
+}  // namespace oc::hal::common

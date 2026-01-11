@@ -4,12 +4,12 @@
  */
 #include <Arduino.h>
 
-#include <oc/common/Types.hpp>
-#include <oc/common/ButtonDef.hpp>
-#include <oc/common/EncoderDef.hpp>
+#include <oc/hal/common/Types.hpp>
+#include <oc/hal/common/ButtonDef.hpp>
+#include <oc/hal/common/EncoderDef.hpp>
 
-static_assert(sizeof(oc::common::ButtonDef) > 0, "ButtonDef");
-static_assert(sizeof(oc::common::EncoderDef) > 0, "EncoderDef");
+static_assert(sizeof(oc::hal::common::ButtonDef) > 0, "ButtonDef");
+static_assert(sizeof(oc::hal::common::EncoderDef) > 0, "EncoderDef");
 
 void setup() {}
 void loop() {}

@@ -2,10 +2,10 @@
 
 #include <type_traits>
 
-#include <oc/common/Types.hpp>
+#include <oc/hal/common/Types.hpp>
 #include <oc/hal/Types.hpp>
 
-namespace oc::common {
+namespace oc::hal::common {
 
 /**
  * @brief Hardware definition for a physical button
@@ -67,4 +67,4 @@ struct ButtonDef {
         : id(static_cast<ButtonID>(id_)), pin(pin_), activeLow(activeLow_) {}
 };
 
-}  // namespace oc::common
+}  // namespace oc::hal::common
