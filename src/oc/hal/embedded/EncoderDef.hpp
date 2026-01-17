@@ -3,9 +3,9 @@
 #include <cstdint>
 #include <type_traits>
 
-#include <oc/hal/common/Types.hpp>
+#include <oc/hal/embedded/Types.hpp>
 
-namespace oc::hal::common {
+namespace oc::hal::embedded {
 
 /**
  * @brief Hardware definition for a rotary encoder
@@ -41,7 +41,7 @@ namespace oc::hal::common {
  * ## Configuration Parameters
  *
  * - **ppr**: Pulses per revolution - physical encoder resolution
- * - **rangeAngle**: Total rotation angle in degrees (270° for most pots)
+ * - **rangeAngle**: Total rotation angle in degrees (270 for most pots)
  * - **ticksPerEvent**: Number of ticks before emitting an event (detent count)
  * - **invertDirection**: Swap clockwise/counter-clockwise direction
  *
@@ -80,4 +80,4 @@ struct EncoderDef {
           invertDirection(invertDirection_) {}
 };
 
-}  // namespace oc::hal::common
+}  // namespace oc::hal::embedded

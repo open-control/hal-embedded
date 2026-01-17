@@ -2,10 +2,10 @@
 
 #include <type_traits>
 
-#include <oc/hal/common/Types.hpp>
-#include <oc/hal/Types.hpp>
+#include <oc/hal/embedded/Types.hpp>
+#include <oc/hal/embedded/GpioPin.hpp>
 
-namespace oc::hal::common {
+namespace oc::hal::embedded {
 
 /**
  * @brief Hardware definition for a physical button
@@ -49,22 +49,22 @@ namespace oc::hal::common {
  */
 struct ButtonDef {
     ButtonID id{};          ///< Logical button identifier
-    hal::GpioPin pin{};     ///< Physical GPIO pin configuration
+    GpioPin pin{};          ///< Physical GPIO pin configuration
     bool activeLow = true;  ///< true: pressed=LOW, false: pressed=HIGH
 
     /// Default constructor
     constexpr ButtonDef() = default;
 
     /// Constructor with raw uint16_t ID
-    constexpr ButtonDef(ButtonID id_, hal::GpioPin pin_, bool activeLow_ = true)
+    constexpr ButtonDef(ButtonID id_, GpioPin pin_, bool activeLow_ = true)
         : id(id_), pin(pin_), activeLow(activeLow_) {}
 
     /// Constructor with enum class ID (enables IDE autocompletion)
     template <typename EnumT,
               typename = std::enable_if_t<std::is_enum_v<EnumT> &&
                                           std::is_same_v<std::underlying_type_t<EnumT>, uint16_t>>>
-    constexpr ButtonDef(EnumT id_, hal::GpioPin pin_, bool activeLow_ = true)
+    constexpr ButtonDef(EnumT id_, GpioPin pin_, bool activeLow_ = true)
         : id(static_cast<ButtonID>(id_)), pin(pin_), activeLow(activeLow_) {}
 };
 
-}  // namespace oc::hal::common
+}  // namespace oc::hal::embedded
