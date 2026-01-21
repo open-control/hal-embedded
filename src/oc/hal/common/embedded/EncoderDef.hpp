@@ -3,9 +3,9 @@
 #include <cstdint>
 #include <type_traits>
 
-#include <oc/hal/embedded/Types.hpp>
+#include <oc/hal/common/embedded/Types.hpp>
 
-namespace oc::hal::embedded {
+namespace oc::hal::common::embedded {
 
 /**
  * @brief Hardware definition for a rotary encoder
@@ -80,4 +80,4 @@ struct EncoderDef {
           invertDirection(invertDirection_) {}
 };
 
-}  // namespace oc::hal::embedded
+}  // namespace oc::hal::common::embedded

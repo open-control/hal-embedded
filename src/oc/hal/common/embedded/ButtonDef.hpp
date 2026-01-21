@@ -2,10 +2,10 @@
 
 #include <type_traits>
 
-#include <oc/hal/embedded/Types.hpp>
-#include <oc/hal/embedded/GpioPin.hpp>
+#include <oc/hal/common/embedded/Types.hpp>
+#include <oc/hal/common/embedded/GpioPin.hpp>
 
-namespace oc::hal::embedded {
+namespace oc::hal::common::embedded {
 
 /**
  * @brief Hardware definition for a physical button
@@ -67,4 +67,4 @@ struct ButtonDef {
         : id(static_cast<ButtonID>(id_)), pin(pin_), activeLow(activeLow_) {}
 };
 
-}  // namespace oc::hal::embedded
+}  // namespace oc::hal::common::embedded

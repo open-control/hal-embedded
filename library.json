@@ -1,23 +1,8 @@
 {
-  "name": "hal-embedded",
+  "name": "hal-common",
   "version": "0.2.0",
-  "description": "Embedded types for Open Control HAL (GPIO, ButtonDef, EncoderDef)",
-  "keywords": ["open-control", "hal", "embedded", "mcu", "gpio"],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/open-control/hal-embedded.git"
-  },
-  "license": "MIT",
-  "frameworks": "*",
-  "platforms": "*",
-  "dependencies": {
-    "framework": "https://github.com/open-control/framework.git"
-  },
   "build": {
     "includeDir": "src",
-    "srcFilter": [
-      "+<**/*.cpp>",
-      "-<main.cpp>"
-    ]
+    "srcFilter": ["+<**/*.cpp>", "-<main.cpp>"]
   }
 }

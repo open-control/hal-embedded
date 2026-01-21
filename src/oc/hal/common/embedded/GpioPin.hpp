@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace oc::hal::embedded {
+namespace oc::hal::common::embedded {
 
 /**
  * @brief GPIO pin configuration for embedded platforms
@@ -20,4 +20,4 @@ struct GpioPin {
     Source source = Source::MCU;
 };
 
-}  // namespace oc::hal::embedded
+}  // namespace oc::hal::common::embedded
