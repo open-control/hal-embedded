@@ -1,6 +1,18 @@
 {
   "name": "hal-common",
   "version": "0.2.0",
+  "description": "Common HAL types and definitions for Open Control",
+  "keywords": ["open-control", "hal", "embedded", "hardware-abstraction"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/open-control/hal-common.git"
+  },
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*",
+  "dependencies": {
+    "open-control/framework": ">=0.1.0 <1.0.0"
+  },
   "build": {
     "includeDir": "src",
     "srcFilter": ["+<**/*.cpp>", "-<main.cpp>"]
