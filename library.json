@@ -1,5 +1,5 @@
 {
-  "name": "hal-common",
+  "name": "oc-hal-common",
   "version": "0.2.0",
   "description": "Common HAL types and definitions for Open Control",
   "keywords": ["open-control", "hal", "embedded", "hardware-abstraction"],
