@@ -10,9 +10,7 @@
   "license": "MIT",
   "frameworks": "*",
   "platforms": "*",
-  "dependencies": {
-    "open-control/framework": ">=0.1.0 <1.0.0"
-  },
+  "dependencies": {},
   "build": {
     "includeDir": "src",
     "srcFilter": ["+<**/*.cpp>", "-<main.cpp>"]
